@@ -84,3 +84,63 @@ hr {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
 }
+
+.breadcrumb-navigation {
+    padding-top: 20px;
+}
+
+.breadcrumb-link {
+    color: #30302F;
+}
+
+.breadcrumb-link:hover {
+    color: #E4291B;
+}
+
+.bi-person-fill, .bi-clock-fill {
+    color: #E4291B;
+}
+
+.text {
+    color: #30302F;
+}
+
+.recipe-name {
+    padding-bottom: 20px;
+}
+
+.recipe-image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.ingredient-container {
+    padding-top: 10px;
+}
+
+ul.ingredient-list {
+    margin: auto;
+    padding: 0;
+    list-style-position: inside;
+    list-style-type: square;
+}
+
+.main-text {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.recipe-description {
+    padding-top: 20px;
+    font-size: large;
+}
+
+.ingredient-text, .instruction-text {
+    font-size: large;
+}
+
+ol.instructions {
+    padding: 0;
+    list-style-position: inside;
+}
