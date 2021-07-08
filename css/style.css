@@ -18,12 +18,6 @@ a {
     font-size: large;
 }
 
-.recipe-type:hover {
-    text-decoration: underline;
-    color: #fff;
-    text-shadow: darkgrey 0 0 2px;
-}
-
 .btn-info {
     background-color: #E4291B;
     border: none;
