@@ -46,6 +46,36 @@ a {
     margin-bottom: 20px;
 }
 
+.recipes-grid {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.image-grid {
+    width: 100%;
+    height: 12vw;
+    object-fit: cover;
+    border-radius: 20px;
+    padding-bottom: 10px;
+}
+
+.image-grid:hover {
+    transform: scale(1.05);
+    transition: all .2s linear;
+}
+
+.recipe-type-grid {
+    font-size: small;
+}
+
+.recipe-name-grid {
+    color: #30302F;
+}
+
+.recipe-name-grid:hover {
+    color: #E4291B;
+}
+
 .footer {
     background-color: #30302F;
     padding-bottom: 5px;
