@@ -1,5 +1,16 @@
 <?php
-    include('../../templates/header.php');
+    require_once 'database-config.php';
+
+    include('templates/header.php');
+?>
+
+<?php
+if (isset($_REQUEST['id'])) {
+    $id = $_REQUEST['id'];
+    $recipe = find_recipe($id);
+} else {
+    throw new Exception('You need to specify recipe number.');
+}
 ?>
 
 <hr style="margin: 0;">
@@ -8,7 +19,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="../../index.php" class="breadcrumb-link">Home</a>
+                    <a href="index.php" class="breadcrumb-link">Home</a>
                 </li>
                 <li class="breadcrumb-item">
                     <a href="#" class="breadcrumb-link">Breakfast Recipes</a>
@@ -19,10 +30,10 @@
     </div>
 
     <div class="recipe">
-        <h2 class="recipe-name">Banana Pancakes</h2>
+        <h2 class="recipe-name"><?= $recipe->name ?></h2>
         <div class="row">
             <div class="col-md-8">
-                <img src="../../images/banana-pancakes.jpg" class="recipe-image" alt="Banana Pancakes">
+                <img src="images/<?= $recipe->image_path ?>" class="recipe-image" alt="Banana Pancakes">
             </div>
             <div class="col-md-4">
                 <div class="icon-container">
@@ -49,10 +60,7 @@
         <div class="row">
             <div class="col-md-10">
                 <div class="main-text">
-                    <p class="recipe-description">It’s true, the WORLD loves pancakes.
-                        No more so than on Tuesday before lent, commonly referred to as Shrove Tuesday or Pancake Tuesday here in Australia.
-                        This is not your traditional pancake recipe, but instead a recipe that is high in fibre, protein, vitamins and minerals.
-                    </p>
+                    <p class="recipe-description"><?= $recipe->description ?></p>
                     <br>
                     <h4>Instructions</h4>
                     <ol class="instructions">
@@ -71,5 +79,5 @@
 </div>
 
 <?php
-    include('../../templates/footer.php');
+    include('templates/footer.php');
 ?>

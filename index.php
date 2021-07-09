@@ -11,11 +11,9 @@
                 <div class="carousel-caption d-none d-sm-block top-50">
                     <span class="recipe-type">Breakfast Recipe</span>
                     <h1 class="carousel-recipe">Banana Pancakes</h1>
-                    <button type="button" class="btn-lg btn-info uppercase">
-                        <a href="html/recipes/banana-pancakes.php">
-                            View Recipe
-                        </a>
-                    </button>
+                    <a href="recipe.php?id=1" class="btn-lg btn-info uppercase">
+                        View Recipe
+                    </a>
                 </div>
             </div>
             <div class="carousel-item align-middle" data-bs-interval="10000">
@@ -23,11 +21,9 @@
                 <div class="carousel-caption d-none d-sm-block top-50">
                     <span class="recipe-type">Lunch Recipe</span>
                     <h1 class="carousel-recipe">Pesto Chicken Linguini</h1>
-                    <button type="button" class="btn-lg btn-info uppercase">
-                        <a href="html/recipes/pesto-chicken-linguini.html">
-                            View Recipe
-                        </a>
-                    </button>
+                    <a href="recipe.php?id=2" class="btn-lg btn-info uppercase">
+                        View Recipe
+                    </a>
                 </div>
             </div>
         </div>
@@ -56,22 +52,22 @@
                 <div class="col-3">
                     <img src="images/banana-pancakes.jpg" alt="Banana Pancakes" class="image-grid">
                     <span class="recipe-type-grid">Breakfast Recipe</span>
-                    <h5><a href="html/recipes/banana-pancakes.php" class="recipe-name-grid">Banana Pancakes</a></h5>
+                    <h5><a href="recipe.php?id=1" class="recipe-name-grid">Banana Pancakes</a></h5>
                 </div>
                 <div class="col-3">
                     <img src="images/banana-pancakes.jpg" alt="Banana Pancakes" class="image-grid">
                     <span class="recipe-type-grid">Breakfast Recipe</span>
-                    <h5><a href="html/recipes/banana-pancakes.php" class="recipe-name-grid">Banana Pancakes</a></h5>
+                    <h5><a href="recipe.php?id=1" class="recipe-name-grid">Banana Pancakes</a></h5>
                 </div>
                 <div class="col-3">
                     <img src="images/banana-pancakes.jpg" alt="Banana Pancakes" class="image-grid">
                     <span class="recipe-type-grid">Breakfast Recipe</span>
-                    <h5><a href="html/recipes/banana-pancakes.php" class="recipe-name-grid">Banana Pancakes</a></h5>
+                    <h5><a href="recipe.php?id=1" class="recipe-name-grid">Banana Pancakes</a></h5>
                 </div>
                 <div class="col-3">
                     <img src="images/banana-pancakes.jpg" alt="Banana Pancakes" class="image-grid">
                     <span class="recipe-type-grid">Breakfast Recipe</span>
-                    <h5><a href="html/recipes/banana-pancakes.php" class="recipe-name-grid">Banana Pancakes</a></h5>
+                    <h5><a href="recipe.php?id=1" class="recipe-name-grid">Banana Pancakes</a></h5>
                 </div>
             </div>
         </div>
