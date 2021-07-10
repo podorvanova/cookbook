@@ -12,12 +12,20 @@ class Recipe
     public $description;
     public $image_path;
     public $instructions;
+    public $ingredients;
 }
 
 class Instruction
 {
     public $instruction_number;
     public $instruction_description;
+}
+
+class Ingredient
+{
+    public $ingredient_number;
+    public $ingredient_measure;
+    public $ingredient_name;
 }
 
 function find_recipe($id) {
@@ -33,11 +41,22 @@ function find_recipe($id) {
             $query_instructions = "SELECT instruction_number, instruction_description FROM instructions WHERE recipe_id = $id ORDER BY instruction_number";
             $result_instructions = pg_exec($db_handle, $query_instructions);
             $instructions = array();
+
             for ($i = 0; $i < pg_num_rows($result_instructions); $i++) {
                 $instructions[$i] = pg_fetch_object($result_instructions, $i, 'Instruction');
             }
+
+            $query_ingredients = "SELECT ingredient_number, ingredient_measure, ingredient_name FROM ingredients WHERE recipe_id = $id ORDER BY ingredient_number";
+            $result_ingredients = pg_exec($db_handle, $query_ingredients);
+            $ingredients = array();
+
+            for ($i = 0; $i < pg_num_rows($result_ingredients); $i++) {
+                $ingredients[$i] = pg_fetch_object($result_ingredients, $i, 'Ingredient');
+            }
+
             $recipe = pg_fetch_object($result, 0, 'Recipe');
             $recipe->instructions = $instructions;
+            $recipe->ingredients = $ingredients;
             return $recipe;
         } elseif ($answer == 0) {
             return null;

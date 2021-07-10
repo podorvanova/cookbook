@@ -38,7 +38,7 @@ if (isset($_REQUEST['id'])) {
             <div class="col-md-4">
                 <div class="icon-container">
                     <i class="bi bi-person-fill">
-                        <span class="text">2 serves</span>
+                        <span class="text">1 serve(s)</span>
                     </i>
                     &emsp;
                     <i class="bi bi-clock-fill">
@@ -49,10 +49,11 @@ if (isset($_REQUEST['id'])) {
                 <div class="ingredient-container">
                     <h4>Ingredients</h4>
                     <ul class="ingredient-list">
-                        <li><span class="ingredient-text">1 ripe banana (200g)</span></li>
-                        <li><span class="ingredient-text">2 large eggs</span></li>
-                        <li><span class="ingredient-text">½ tsp baking powder </span></li>
-                        <li><span class="ingredient-text">½ cup quick rolled oats</span></li>
+                        <?php
+                        for ($i = 0; $i < count($recipe->ingredients); $i++) {
+                            echo "<li><span class=\"ingredient-text\">{$recipe->ingredients[$i]-> ingredient_measure}{$recipe->ingredients[$i]-> ingredient_name}</span></li>";
+                        }
+                        ?>
                     </ul>
                 </div>
             </div>

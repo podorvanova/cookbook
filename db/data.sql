@@ -34,3 +34,22 @@ INSERT INTO instructions (recipe_id, instruction_number, instruction_description
 (2, 2, 'Meanwhile, in a nonstick frying pan, sauté the chicken until golden, 4 to 6 minutes.'),
 (2, 3, 'Add the cream and reduce heat, add basil pesto and simmer for 5 minutes.'),
 (2, 4, 'Add the linguini and toss to coat in the yummy sauce.');
+
+CREATE TABLE ingredients (
+        recipe_id INT NOT NULL,
+        ingredient_number INT NOT NULL,
+        ingredient_measure DOUBLE PRECISION NOT NULL,
+        ingredient_name VARCHAR NOT NULL,
+        PRIMARY KEY (recipe_id, ingredient_number),
+        FOREIGN KEY (recipe_id) REFERENCES recipes (id)
+);
+
+INSERT INTO ingredients (recipe_id, ingredient_number, ingredient_measure, ingredient_name) VALUES
+(1, 1, 0.5, ' ripe banana'),
+(1, 2, 1, ' large eggs'),
+(1, 3, 0.25, ' baking powder'),
+(1, 4, 0.25, ' cup quick rolled oats'),
+(2, 1, 100, 'g linguini'),
+(2, 2, 125, 'g chicken breasts, chopped or chicken stir fry strips'),
+(2, 3, 75, 'ml tub cream'),
+(2, 4, 20, 'g basil pesto');
