@@ -64,13 +64,11 @@ if (isset($_REQUEST['id'])) {
                     <br>
                     <h4>Instructions</h4>
                     <ol class="instructions">
-                        <li><span class="instruction-text">Preheat a medium non-stick frying pan over a medium heat.</span></li>
-                        <li><span class="instruction-text">In a blender, blend together all the ingredients until nice and smooth.</span></li>
-                        <li><span class="instruction-text">Pour 2 x ¼ cup mixture into the pan, forming small pancake circles.</span></li>
-                        <li><span class="instruction-text">After two minutes or when just golden, flip.</span></li>
-                        <li><span class="instruction-text">Cook for another 2 minutes or until done.</span></li>
-                        <li><span class="instruction-text">Set aside on a plate and repeat with the remaining pancake batter.</span></li>
-                        <li><span class="instruction-text">Serve with your favourite toppings.</span></li>
+                        <?php
+                            for ($i = 0; $i < count($recipe->instructions); $i++) {
+                                echo "<li><span class=\"instruction-text\">{$recipe->instructions[$i]->instruction_description}</span></li>";
+                            }
+                        ?>
                     </ol>
                 </div>
             </div>

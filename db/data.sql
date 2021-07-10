@@ -13,3 +13,24 @@ INSERT INTO recipes (id, name, description, image_path) VALUES
                         No more so than on Tuesday before lent, commonly referred to as Shrove Tuesday or Pancake Tuesday here in Australia.
                         This is not your traditional pancake recipe, but instead a recipe that is high in fibre, protein, vitamins and minerals.', 'banana-pancakes.jpg'),
 (2, 'Pesto Chicken Linguini', 'This delicious pesto & chicken linguini will warm you up on these Winter nights!', 'pesto-chicken-linguini.jpeg');
+
+CREATE TABLE instructions (
+        recipe_id INT NOT NULL,
+        instruction_number INT NOT NULL,
+        instruction_description VARCHAR NOT NULL,
+        PRIMARY KEY (recipe_id, instruction_number),
+        FOREIGN KEY (recipe_id) REFERENCES recipes (id)
+);
+
+INSERT INTO instructions (recipe_id, instruction_number, instruction_description) VALUES
+(1, 1, 'Preheat a medium non-stick frying pan over a medium heat.'),
+(1, 2, 'In a blender, blend together all the ingredients until nice and smooth.'),
+(1, 3, 'Pour 2 x ¼ cup mixture into the pan, forming small pancake circles.'),
+(1, 4, 'After two minutes or when just golden, flip.'),
+(1, 5, 'Cook for another 2 minutes or until done.'),
+(1, 6, 'Set aside on a plate and repeat with the remaining pancake batter.'),
+(1, 7, 'Serve with your favourite toppings.'),
+(2, 1, 'In a large pot of boiling, salted water cook the linguini according to packet directions.'),
+(2, 2, 'Meanwhile, in a nonstick frying pan, sauté the chicken until golden, 4 to 6 minutes.'),
+(2, 3, 'Add the cream and reduce heat, add basil pesto and simmer for 5 minutes.'),
+(2, 4, 'Add the linguini and toss to coat in the yummy sauce.');
