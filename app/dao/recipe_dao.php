@@ -9,23 +9,36 @@ require_once(dirname(__FILE__).'/../models/Recipe.php');
 function find_recipe($id) {
     global $db_handle;
 
-    $query_recipe = "SELECT id, name, type, description, image_path FROM recipes WHERE id = $id";
-
-    $result = pg_exec($db_handle, $query_recipe);
+    $result =
+        pg_query_params(
+            $db_handle,
+            "SELECT id, name, type, description, image_path FROM recipes WHERE id = $1",
+            array($id)
+        );
 
     if ($result) {
         $answer = pg_num_rows($result);
         if ($answer == 1) {
-            $query_instructions = "SELECT instruction_number, instruction_description FROM instructions WHERE recipe_id = $id ORDER BY instruction_number";
-            $result_instructions = pg_exec($db_handle, $query_instructions);
+            $result_instructions =
+                pg_query_params(
+                    $db_handle,
+                    "SELECT instruction_number, instruction_description FROM instructions WHERE recipe_id = $1 
+                     ORDER BY instruction_number",
+                    array($id)
+                );
             $instructions = array();
 
             for ($i = 0; $i < pg_num_rows($result_instructions); $i++) {
                 $instructions[$i] = pg_fetch_object($result_instructions, $i, 'Instruction');
             }
 
-            $query_ingredients = "SELECT ingredient_number, ingredient_measure, ingredient_name FROM ingredients WHERE recipe_id = $id ORDER BY ingredient_number";
-            $result_ingredients = pg_exec($db_handle, $query_ingredients);
+            $result_ingredients =
+                pg_query_params(
+                    $db_handle,
+                    "SELECT ingredient_number, ingredient_measure, ingredient_name FROM ingredients 
+                     WHERE recipe_id = $1 ORDER BY ingredient_number",
+                    array($id)
+                );
             $ingredients = array();
 
             for ($i = 0; $i < pg_num_rows($result_ingredients); $i++) {
