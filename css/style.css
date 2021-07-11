@@ -29,6 +29,10 @@ a {
     background-color: #E4291B;
 }
 
+.btn-info:active, .btn-info:focus {
+    box-shadow: 0 0 0 2px #ef877f !important;
+}
+
 .carousel-recipe {
     margin-top: 10px;
     margin-bottom: 30px;
