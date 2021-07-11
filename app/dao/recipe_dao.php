@@ -1,33 +1,10 @@
 <?php
-$db_handle = pg_connect(getenv("DATABASE_URL"));
 
-if (!$db_handle) {
-    throw new Exception('Connection attempt failed.');
-}
+require_once(dirname(__FILE__).'/database_config.php');
 
-class Recipe
-{
-    public $id;
-    public $name;
-    public $type;
-    public $description;
-    public $image_path;
-    public $instructions;
-    public $ingredients;
-}
-
-class Instruction
-{
-    public $instruction_number;
-    public $instruction_description;
-}
-
-class Ingredient
-{
-    public $ingredient_number;
-    public $ingredient_measure;
-    public $ingredient_name;
-}
+require_once(dirname(__FILE__).'/../models/Instruction.php');
+require_once(dirname(__FILE__).'/../models/Ingredient.php');
+require_once(dirname(__FILE__).'/../models/Recipe.php');
 
 function find_recipe($id) {
     global $db_handle;

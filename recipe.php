@@ -1,7 +1,7 @@
 <?php
-    require_once 'database-config.php';
+    require_once(dirname(__FILE__).'/app/dao/recipe_dao.php');
 
-    include('templates/header.php');
+    require_once(dirname(__FILE__).'/templates/header.php');
 ?>
 
 <?php
@@ -33,7 +33,7 @@ if (isset($_REQUEST['id'])) {
         <h2 class="recipe-name"><?= $recipe->name ?></h2>
         <div class="row">
             <div class="col-md-8">
-                <img src="images/<?= $recipe->image_path ?>" class="recipe-image" alt="Banana Pancakes">
+                <img src="/public/images/<?= $recipe->image_path ?>" class="recipe-image" alt="Banana Pancakes">
             </div>
             <div class="col-md-4">
                 <div class="icon-container">
@@ -78,5 +78,5 @@ if (isset($_REQUEST['id'])) {
 </div>
 
 <?php
-    include('templates/footer.php');
+    require_once(dirname(__FILE__).'/templates/footer.php');
 ?>

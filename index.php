@@ -1,5 +1,5 @@
 <?php
-    include('templates/header.php');
+    require_once(dirname(__FILE__).'/templates/header.php');
 ?>
 
 <!-- Home Slider -->
@@ -7,7 +7,7 @@
     <div class="carousel-inner">
         <div class="container-fluid">
             <div class="carousel-item active align-middle" data-bs-interval="10000">
-                <img src="images/banana-pancakes.jpg" class="d-block w-100" alt="Banana Pancakes">
+                <img src="public/images/banana-pancakes.jpg" class="d-block w-100" alt="Banana Pancakes">
                 <div class="carousel-caption d-none d-sm-block top-50">
                     <span class="recipe-type">Breakfast Recipe</span>
                     <h1 class="carousel-recipe">Banana Pancakes</h1>
@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="carousel-item align-middle" data-bs-interval="10000">
-                <img src="images/pesto-chicken-linguini.jpeg" class="d-block w-100" alt="Pesto Chicken Linguini">
+                <img src="public/images/pesto-chicken-linguini.jpeg" class="d-block w-100" alt="Pesto Chicken Linguini">
                 <div class="carousel-caption d-none d-sm-block top-50">
                     <span class="recipe-type">Lunch Recipe</span>
                     <h1 class="carousel-recipe">Pesto Chicken Linguini</h1>
@@ -50,22 +50,22 @@
             </div>
             <div class="row recipes-grid">
                 <div class="col-3">
-                    <img src="images/banana-pancakes.jpg" alt="Banana Pancakes" class="image-grid">
+                    <img src="public/images/banana-pancakes.jpg" alt="Banana Pancakes" class="image-grid">
                     <span class="recipe-type-grid">Breakfast Recipe</span>
                     <h5><a href="recipe.php?id=1" class="recipe-name-grid">Banana Pancakes</a></h5>
                 </div>
                 <div class="col-3">
-                    <img src="images/banana-pancakes.jpg" alt="Banana Pancakes" class="image-grid">
+                    <img src="public/images/banana-pancakes.jpg" alt="Banana Pancakes" class="image-grid">
                     <span class="recipe-type-grid">Breakfast Recipe</span>
                     <h5><a href="recipe.php?id=1" class="recipe-name-grid">Banana Pancakes</a></h5>
                 </div>
                 <div class="col-3">
-                    <img src="images/banana-pancakes.jpg" alt="Banana Pancakes" class="image-grid">
+                    <img src="public/images/banana-pancakes.jpg" alt="Banana Pancakes" class="image-grid">
                     <span class="recipe-type-grid">Breakfast Recipe</span>
                     <h5><a href="recipe.php?id=1" class="recipe-name-grid">Banana Pancakes</a></h5>
                 </div>
                 <div class="col-3">
-                    <img src="images/banana-pancakes.jpg" alt="Banana Pancakes" class="image-grid">
+                    <img src="public/images/banana-pancakes.jpg" alt="Banana Pancakes" class="image-grid">
                     <span class="recipe-type-grid">Breakfast Recipe</span>
                     <h5><a href="recipe.php?id=1" class="recipe-name-grid">Banana Pancakes</a></h5>
                 </div>
@@ -75,5 +75,5 @@
 </div>
 
 <?php
-    include('templates/footer.php');
+    require_once(dirname(__FILE__).'/templates/footer.php');
 ?>
