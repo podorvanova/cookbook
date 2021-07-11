@@ -22,9 +22,9 @@ if (isset($_REQUEST['id'])) {
                     <a href="index.php" class="breadcrumb-link">Home</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="#" class="breadcrumb-link">Breakfast Recipes</a>
+                    <a href="#" class="breadcrumb-link"><?= $recipe->type ?></a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">Banana Pancakes</li>
+                <li class="breadcrumb-item active" aria-current="page"><?= $recipe->name ?></li>
             </ol>
         </nav>
     </div>

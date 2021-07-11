@@ -9,6 +9,7 @@ class Recipe
 {
     public $id;
     public $name;
+    public $type;
     public $description;
     public $image_path;
     public $instructions;
@@ -31,7 +32,7 @@ class Ingredient
 function find_recipe($id) {
     global $db_handle;
 
-    $query_recipe = "SELECT id, name, description, image_path FROM recipes WHERE id = $id";
+    $query_recipe = "SELECT id, name, type, description, image_path FROM recipes WHERE id = $id";
 
     $result = pg_exec($db_handle, $query_recipe);
 
